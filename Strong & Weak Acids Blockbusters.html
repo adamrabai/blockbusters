@@ -1,0 +1,332 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Strong & Weak Acids Blockbusters</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a game-show stage — header scoreboard, hex board centre, question card as an overlay. Single dark stage look by choice. */
+:root {
+  color-scheme: dark;
+  --stage: #0d1530;
+  --stage-2: #16214a;
+  --ink: #f3f5ff;
+  --muted: #a9b3d9;
+  --acid: #e8413a;
+  --acid-soft: #ff8a7a;
+  --alkali: #3d63e0;
+  --alkali-soft: #8ea8ff;
+  --neutral: #2fa65a;
+  --hex: #f2c94c;
+  --hex-ink: #1b1f33;
+  --display: "Bungee", "Arial Black", Impact, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  background: radial-gradient(ellipse at 50% 0%, var(--stage-2), var(--stage) 70%) fixed, var(--stage);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 12px 20px;
+}
+.wrap { max-width: 1200px; margin: 0 auto; display: grid; gap: 14px; }
+header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+h1 { font-family: var(--display); font-weight: 400; margin: 0; text-align: center; font-size: clamp(22px, 4vw, 44px);
+  letter-spacing: 0.02em; text-wrap: balance; line-height: 1.05; }
+h1 small { display: block; font-family: var(--body); font-size: 0.36em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-top: 6px; }
+.team { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 12px; background: rgba(255,255,255,0.05); min-width: 0; }
+.team.right { justify-content: flex-end; text-align: right; }
+.team .chip { width: 18px; height: 18px; border-radius: 4px; flex: none; }
+.team.acid .chip { background: var(--acid); }
+.team.alkali .chip { background: var(--alkali); }
+.team .name { font-family: var(--display); font-size: clamp(14px, 2.2vw, 22px); line-height: 1; }
+.team .goal { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.team .score { font-family: var(--display); font-size: clamp(22px, 3.5vw, 36px); font-variant-numeric: tabular-nums; margin-left: auto; }
+.team.right .score { margin-left: 0; margin-right: auto; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 16px; align-items: start; }
+.board { min-width: 0; display: flex; justify-content: center; }
+svg#grid { width: 100%; max-width: min(760px, calc((100vh - 130px) * 560 / 540)); height: auto; display: block; touch-action: manipulation; }
+.hex polygon { fill: var(--hex); stroke: var(--stage); stroke-width: 4; transition: fill .25s ease, transform .2s ease; }
+.hex text { font-family: var(--display); fill: var(--hex-ink); font-size: 44px; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.hex { cursor: pointer; outline: none; }
+.hex:hover polygon, .hex:focus-visible polygon { fill: #ffe08a; }
+.hex:focus-visible polygon { stroke: #fff; stroke-width: 5; }
+.hex.acid polygon { fill: var(--acid); }
+.hex.alkali polygon { fill: var(--alkali); }
+.hex.acid text, .hex.alkali text { fill: #fff; }
+.hex.win polygon { stroke: #fff; stroke-width: 6; }
+.band-acid { fill: var(--acid); }
+.band-alkali { fill: var(--alkali); }
+aside { display: grid; gap: 12px; }
+.panel { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 14px 16px; }
+.panel h2 { font-family: var(--display); font-weight: 400; font-size: 16px; margin: 0 0 8px; letter-spacing: 0.03em; }
+.panel ol, .panel ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; color: var(--muted); line-height: 1.4; font-size: 15px; }
+.panel strong { color: var(--ink); }
+.btns { display: grid; gap: 8px; }
+button { font-family: var(--body); font-weight: 700; font-size: 16px; border: 0; border-radius: 10px; padding: 11px 14px; cursor: pointer; color: var(--ink); background: rgba(255,255,255,0.12); }
+button:hover { background: rgba(255,255,255,0.2); }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+button.acid { background: var(--acid); color: #fff; }
+button.alkali { background: var(--alkali); color: #fff; }
+button.acid:hover { background: #ff5a52; }
+button.alkali:hover { background: #5278f0; }
+button.ghost { background: transparent; border: 2px solid rgba(255,255,255,0.25); }
+.confirm { display: grid; gap: 8px; }
+
+.overlay { position: fixed; inset: 0; background: rgba(5, 9, 25, 0.82); display: grid; place-items: center; z-index: 20;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.card { width: min(900px, 100%); background: var(--stage-2); border-radius: 22px; padding: clamp(18px, 4vw, 40px); display: grid; gap: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5); border: 3px solid var(--hex); }
+.card .top { display: flex; align-items: center; gap: 18px; }
+.card .letter { width: clamp(70px, 12vw, 120px); aspect-ratio: 1.155; max-width: 100%; background: var(--hex); color: var(--hex-ink);
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); display: grid; place-items: center;
+  font-family: var(--display); font-size: clamp(40px, 7vw, 70px); flex: none; }
+.card .q { font-size: clamp(22px, 3.4vw, 40px); line-height: 1.25; font-weight: 700; text-wrap: balance; min-width: 0; }
+.answer { font-size: clamp(22px, 3.2vw, 36px); font-weight: 700; color: var(--neutral); background: rgba(47,166,90,0.12); border-radius: 12px; padding: 12px 18px; }
+.answer span { color: var(--muted); font-size: 0.55em; display: block; letter-spacing: 0.12em; text-transform: uppercase; }
+.card .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.card .actions button { font-size: clamp(16px, 2vw, 20px); padding: 14px 20px; }
+
+.banner { position: fixed; inset: 0; display: grid; place-items: center; z-index: 30; background: rgba(5,9,25,0.7);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.banner .inner { text-align: center; display: grid; gap: 16px; justify-items: center; }
+.banner .big { font-family: var(--display); font-size: clamp(40px, 10vw, 110px); line-height: 1; text-shadow: 0 6px 0 rgba(0,0,0,0.35); }
+.banner.acid .big { color: var(--acid-soft); }
+.banner.alkali .big { color: var(--alkali-soft); }
+.banner p { margin: 0; font-size: 20px; color: var(--muted); }
+@keyframes pop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.banner .big { animation: pop .45s cubic-bezier(.2,1.4,.4,1) both; }
+@media (prefers-reduced-motion: reduce) { .banner .big { animation: none; } .hex polygon { transition: none; } }
+
+@media (max-width: 860px) {
+  main { grid-template-columns: 1fr; }
+  header { grid-template-columns: 1fr 1fr; }
+  h1 { grid-column: 1 / -1; order: -1; }
+  .team.right { justify-content: flex-start; text-align: left; }
+  .team.right .score { margin-right: 0; margin-left: auto; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="team acid">
+      <span class="chip" aria-hidden="true"></span>
+      <div><div class="name">Strong</div><div class="goal">Connect left ↔ right</div></div>
+      <div class="score" id="scoreAcid" aria-label="Strong team games won">0</div>
+    </div>
+    <h1>Blockbusters<small>Strong &amp; weak acids</small></h1>
+    <div class="team alkali right">
+      <div class="score" id="scoreAlkali" aria-label="Weak team games won">0</div>
+      <div><div class="name">Weak</div><div class="goal">Connect top ↕ bottom</div></div>
+      <span class="chip" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main>
+    <div class="board">
+      <svg id="grid" viewBox="0 0 560 540" role="group" aria-label="Blockbusters board"></svg>
+    </div>
+    <aside>
+      <div class="panel">
+        <h2>How to play</h2>
+        <ol>
+          <li>The team that picks a letter hears the question. <strong>First hand up</strong> from either team answers.</li>
+          <li>Every answer <strong>starts with the letter</strong> on the hexagon.</li>
+          <li>Correct? The hexagon turns that team’s colour. The team that won it picks the next letter.</li>
+          <li><strong>Strong</strong> wins by joining the red sides. <strong>Weak</strong> wins by joining the blue sides.</li>
+        </ol>
+      </div>
+      <div class="panel btns">
+        <button type="button" id="newGame">New game (shuffle letters)</button>
+        <div class="confirm" id="resetConfirm" hidden>
+          <span style="color:var(--muted);font-size:14px">Clear the board and the scores?</span>
+          <button type="button" class="acid" id="resetYes">Yes, reset everything</button>
+          <button type="button" class="ghost" id="resetNo">Cancel</button>
+        </div>
+        <button type="button" class="ghost" id="resetAll">Reset scores</button>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="qText">
+    <div class="top">
+      <div class="letter" id="qLetter">A</div>
+      <div class="q" id="qText"></div>
+    </div>
+    <div class="answer" id="qAnswer" hidden><span>Answer</span><b id="qAnswerText"></b></div>
+    <div class="actions" id="qActions"></div>
+  </div>
+</div>
+
+<div class="banner" id="banner" hidden>
+  <div class="inner">
+    <div class="big" id="bannerText">Strong wins!</div>
+    <p id="bannerSub"></p>
+    <button type="button" id="bannerNext">Play again</button>
+  </div>
+</div>
+
+<script>
+const TEAM = { acid: 'Strong', alkali: 'Weak' };
+const QUESTIONS = [
+  { l: 'A', q: 'What A is a substance that releases H⁺ ions when it dissolves in water?', a: 'Acid' },
+  { l: 'B', q: 'What B do you see more of, more quickly, when magnesium is added to a strong acid instead of a weak acid?', a: 'Bubbles (of hydrogen)' },
+  { l: 'C', q: 'What C describes an acid with a large amount of acid in a given volume of solution?', a: 'Concentrated' },
+  { l: 'D', q: 'What D describes an acid with only a small amount of acid in a given volume of solution?', a: 'Dilute' },
+  { l: 'E', q: 'What E is the weak acid with the formula CH₃COOH?', a: 'Ethanoic acid' },
+  { l: 'F', q: 'What F word means the same as “completely” when we say a strong acid is ____ ionised?', a: 'Fully' },
+  { l: 'G', q: 'What G is the name for pure, very concentrated ethanoic acid – a concentrated weak acid?', a: 'Glacial (ethanoic acid)' },
+  { l: 'H', q: 'What H is the strong acid with the formula HCl?', a: 'Hydrochloric acid' },
+  { l: 'I', q: 'What I is the process of an acid splitting up into ions in water?', a: 'Ionisation' },
+  { l: 'L', q: 'At the same concentration, is the pH of a strong acid higher or lower than a weak acid? (L…)', a: 'Lower' },
+  { l: 'M', q: 'What M is the electronic device used to measure pH accurately?', a: 'Meter (pH meter)' },
+  { l: 'N', q: 'What N is the strong acid with the formula HNO₃?', a: 'Nitric acid' },
+  { l: 'O', q: 'What O is how many units the pH falls when the H⁺ ion concentration increases by a factor of 10?', a: 'One' },
+  { l: 'P', q: 'What P describes how much a weak acid ionises in water?', a: 'Partially' },
+  { l: 'R', q: 'What R describes the reaction shown by the ⇌ arrow when a weak acid ionises?', a: 'Reversible' },
+  { l: 'S', q: 'What S is the strong acid with the formula H₂SO₄?', a: 'Sulfuric acid' },
+  { l: 'T', q: 'What T is the factor the H⁺ ion concentration changes by for every 1 unit change in pH?', a: 'Ten (10)' },
+  { l: 'U', q: 'What U is the indicator that shows a range of colours across the whole pH scale?', a: 'Universal indicator' },
+  { l: 'V', q: 'What V is the household liquid that contains ethanoic acid?', a: 'Vinegar' },
+  { l: 'W', q: 'What W is the type of acid that only partially ionises in water, like citric acid?', a: 'Weak' },
+];
+const COLS = 5, ROWS = 4, R = 58, H = Math.sqrt(3) * R, OX = 100, OY = 48;
+const svg = document.getElementById('grid');
+const NS = 'http://www.w3.org/2000/svg';
+let state;
+
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function fresh(scores) {
+  return { order: shuffle(QUESTIONS.map((_, i) => i)), owner: Array(COLS * ROWS).fill(null),
+           scores: scores || { acid: 0, alkali: 0 }, winner: null, winPath: [] };
+}
+const idx = (c, r) => c * ROWS + r;
+const center = (c, r) => [OX + c * 1.5 * R, OY + H / 2 + r * H + (c % 2 ? H / 2 : 0)];
+function neighbours(c, r) {
+  const n = [[c, r - 1], [c, r + 1]];
+  if (c % 2 === 0) n.push([c - 1, r - 1], [c - 1, r], [c + 1, r - 1], [c + 1, r]);
+  else n.push([c - 1, r], [c - 1, r + 1], [c + 1, r], [c + 1, r + 1]);
+  return n.filter(([x, y]) => x >= 0 && x < COLS && y >= 0 && y < ROWS);
+}
+function findPath(team) {
+  const starts = [];
+  for (let c = 0; c < COLS; c++) for (let r = 0; r < ROWS; r++) {
+    if (state.owner[idx(c, r)] !== team) continue;
+    if ((team === 'acid' && c === 0) || (team === 'alkali' && r === 0)) starts.push([c, r]);
+  }
+  const prev = new Map(), seen = new Set(starts.map(([c, r]) => idx(c, r))), q = starts.slice();
+  while (q.length) {
+    const [c, r] = q.shift();
+    if ((team === 'acid' && c === COLS - 1) || (team === 'alkali' && r === ROWS - 1)) {
+      const path = [idx(c, r)]; let k = idx(c, r);
+      while (prev.has(k)) { k = prev.get(k); path.push(k); }
+      return path;
+    }
+    for (const [x, y] of neighbours(c, r)) {
+      const k = idx(x, y);
+      if (!seen.has(k) && state.owner[k] === team) { seen.add(k); prev.set(k, idx(c, r)); q.push([x, y]); }
+    }
+  }
+  return null;
+}
+
+function hexPoints(cx, cy) {
+  return Array.from({ length: 6 }, (_, i) => {
+    const a = Math.PI / 3 * i;
+    return `${(cx + (R - 2) * Math.cos(a)).toFixed(1)},${(cy + (R - 2) * Math.sin(a)).toFixed(1)}`;
+  }).join(' ');
+}
+function draw() {
+  svg.innerHTML = '';
+  const minX = OX - R, maxX = OX + (COLS - 1) * 1.5 * R + R;
+  const minY = OY, maxY = OY + ROWS * H + H / 2;
+  const band = (x, y, w, h, cls) => { const e = document.createElementNS(NS, 'rect');
+    Object.entries({ x, y, width: w, height: h, rx: 6, class: cls }).forEach(([k, v]) => e.setAttribute(k, v)); svg.appendChild(e); };
+  band(minX - 34, minY + 10, 18, maxY - minY - 20, 'band-acid');
+  band(maxX + 16, minY + 10, 18, maxY - minY - 20, 'band-acid');
+  band(minX + 20, minY - 34, maxX - minX - 40, 18, 'band-alkali');
+  band(minX + 20, maxY + 14, maxX - minX - 40, 18, 'band-alkali');
+  for (let c = 0; c < COLS; c++) for (let r = 0; r < ROWS; r++) {
+    const k = idx(c, r), q = QUESTIONS[state.order[k]], [cx, cy] = center(c, r);
+    const g = document.createElementNS(NS, 'g');
+    const own = state.owner[k];
+    g.setAttribute('class', 'hex' + (own ? ' ' + own : '') + (state.winPath.includes(k) ? ' win' : ''));
+    g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button');
+    g.setAttribute('aria-label', `Letter ${q.l}${own ? ', won by ' + TEAM[own] : ''}`);
+    const p = document.createElementNS(NS, 'polygon'); p.setAttribute('points', hexPoints(cx, cy));
+    const t = document.createElementNS(NS, 'text'); t.setAttribute('x', cx); t.setAttribute('y', cy + 2); t.textContent = q.l;
+    g.append(p, t);
+    const open = () => openQuestion(k);
+    g.addEventListener('click', open);
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    svg.appendChild(g);
+  }
+  document.getElementById('scoreAcid').textContent = state.scores.acid;
+  document.getElementById('scoreAlkali').textContent = state.scores.alkali;
+}
+
+const overlay = document.getElementById('overlay');
+let lastFocus = null;
+function btn(label, cls, fn) { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; if (cls) b.className = cls; b.addEventListener('click', fn); return b; }
+function openQuestion(k) {
+  if (state.winner) return;
+  lastFocus = document.activeElement;
+  const q = QUESTIONS[state.order[k]];
+  document.getElementById('qLetter').textContent = q.l;
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('qAnswerText').textContent = q.a;
+  document.getElementById('qAnswer').hidden = true;
+  const acts = document.getElementById('qActions'); acts.innerHTML = '';
+  const award = team => { state.owner[k] = team; close(); afterMove(team); };
+  const reveal = btn('Reveal answer', '', () => {
+    document.getElementById('qAnswer').hidden = false;
+    reveal.remove();
+  });
+  acts.append(reveal, btn('Strong got it', 'acid', () => award('acid')), btn('Weak got it', 'alkali', () => award('alkali')));
+  if (state.owner[k]) acts.append(btn('Clear this hexagon', 'ghost', () => { state.owner[k] = null; close(); draw(); }));
+  acts.append(btn('Close', 'ghost', close));
+  overlay.hidden = false;
+  reveal.focus();
+}
+function close() { overlay.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) close(); });
+
+function afterMove(team) {
+  const path = findPath(team);
+  if (path) {
+    state.winner = team; state.winPath = path; state.scores[team]++;
+    draw();
+    const b = document.getElementById('banner');
+    b.className = 'banner ' + team;
+    document.getElementById('bannerText').textContent = TEAM[team] + ' wins!';
+    document.getElementById('bannerSub').textContent = `Games won – Strong ${state.scores.acid} : ${state.scores.alkali} Weak`;
+    b.hidden = false;
+    document.getElementById('bannerNext').focus();
+  } else draw();
+}
+document.getElementById('bannerNext').addEventListener('click', () => { document.getElementById('banner').hidden = true; state = fresh(state.scores); draw(); });
+document.getElementById('newGame').addEventListener('click', () => { state = fresh(state.scores); draw(); });
+const rc = document.getElementById('resetConfirm');
+document.getElementById('resetAll').addEventListener('click', () => { rc.hidden = false; document.getElementById('resetYes').focus(); });
+document.getElementById('resetNo').addEventListener('click', () => { rc.hidden = true; });
+document.getElementById('resetYes').addEventListener('click', () => { rc.hidden = true; state = fresh(); draw(); });
+
+function start(saved) {
+  state = saved && saved.order ? saved : fresh();
+  if (state.winner) { state.winner = null; state.winPath = []; }
+  draw();
+}
+window.claude?.hot?.snapshot?.(() => state);
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+</script>
+
+</body></html>
